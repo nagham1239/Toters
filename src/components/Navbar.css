@@ -1,83 +1,95 @@
 /* General Navbar Styles */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #2c3e50;
-    padding: 15px 20px;
-    color: white;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Logo Styling */
-  .logo h2 {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  /* Navigation Links */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 15px 20px;
+  color: black;
+
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-bottom: 2px solid rgb(239, 239, 239);
+}
+
+/* Logo Styling */
+.logo h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 5px;  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-links a:hover {
+  color: white !important;
+  background: black;
+
+  border-radius: 5px;
+}
+
+/* Ensure all links are visible */
+.nav-links a:visited {
+  color: rgb(0, 0, 0);
+}
+
+/* Menu Icon for Mobile */
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: black;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
   .nav-links {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    transition: color 0.3s ease-in-out;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-  
-  .nav-links a:hover {
-    color: #f39c12;
-  }
-  
-  /* Ensure all links are visible */
-  .nav-links a:visited {
-    color: white;
-  }
-  
-  /* Menu Icon for Mobile */
-  .menu-icon {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    width: 200px;
+    text-align: right;
+    padding: 10px;
     display: none;
-    font-size: 24px;
-    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   }
-  
-  /* Responsive Navbar */
-  @media (max-width: 768px) {
-    .nav-links {
-      position: absolute;
-      top: 60px;
-      right: 0;
-      background: #34495e;
-      flex-direction: column;
-      width: 200px;
-      text-align: right;
-      padding: 10px;
-      display: none;
-    }
-  
-    .nav-links.open {
-      display: flex;
-    }
-  
-    .menu-icon {
-      display: block;
-    }
-  
-    .nav-links a {
-      padding: 10px;
-      display: block;
-      text-align: center;
-    }
+
+  .nav-links.open {
+    display: flex;
   }
-  
+
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links a {
+    padding: 10px;
+    display: block;
+    text-align: center;
+    border-bottom: 1px solid black;
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+}
