@@ -1,20 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Cookies from "js-cookie"; // For managing cookies
 import { db } from "../components/firebase";
-import {
-  collection,
-  query,
-  where,
-  getDocs,
-  deleteDoc,
-  doc,
-  addDoc,
-} from "firebase/firestore";
+import {collection,query,where,getDocs,deleteDoc,doc,addDoc,} from "firebase/firestore";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+import "./Checkout.css";
 
 const Checkout = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [orderPlaced, setOrderPlaced] = useState(false);
+  const navigate = useNavigate(); // Initialize navigation
 
   // Function to handle the checkout process
   const handleCheckout = async () => {
@@ -81,11 +76,24 @@ const Checkout = () => {
   }, []);
 
   if (loading) {
-    return <p>Processing your order...</p>;
+    return (
+      <div className="checkout-loading">
+        <h1>Processing Your Order...</h1>
+        <p>Please wait while we finalize your purchase.</p>
+      </div>
+    );
   }
 
   if (error) {
-    return <p>{error}</p>;
+    return (
+      <div className="checkout-error">
+        <h1>Oops! Something Went Wrong</h1>
+        <p>{error}</p>
+        <button className="back-to-cart-button" onClick={() => navigate("/cart")}>
+          Back to Cart
+        </button>
+      </div>
+    );
   }
 
   if (orderPlaced) {
@@ -93,6 +101,17 @@ const Checkout = () => {
       <div className="checkout-success">
         <h1>Order Placed Successfully!</h1>
         <p>Thank you for your purchase. Your order has been confirmed.</p>
+        <div className="checkout-actions">
+          <button className="continue-shopping-button" onClick={() => navigate("/")}>
+            Continue Shopping
+          </button>
+          <button
+            className="track-order-button"
+            onClick={() => navigate("/order-tracking")}
+          >
+            Track Your Order
+          </button>
+        </div>
       </div>
     );
   }

@@ -33,6 +33,7 @@ const Signup = () => {
         name: name,
         email: email,
         location: location,
+        type:"user"
       });
 
       // Clear any previous errors

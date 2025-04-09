@@ -39,7 +39,7 @@ const Home = () => {
             </p>
             <button 
               className="home-about-button" 
-              onClick={() => window.location.href = '/about'}
+              onClick={() => window.location.href = '/About'}
             >
               Learn More About Us
             </button>

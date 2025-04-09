@@ -36,6 +36,7 @@ const Products = () => {
 
   return (
     <div className="products-container">
+      {/* Header */}
       <div className="products-header">
         <h1 className="products-title">Our Products</h1>
         <FaShoppingBasket className="icon-basket" />
@@ -44,11 +45,16 @@ const Products = () => {
       {/* Filter Options */}
       <div className="filter-options">
         <FaFilter className="filter-icon" />
-        <select value={filter} onChange={(e) => setFilter(e.target.value)}>
+        <select
+          value={filter}
+          onChange={(e) => setFilter(e.target.value)}
+          className="filter-select"
+        >
           <option value="All">All Categories</option>
           <option value="Fruits">Fruits</option>
           <option value="Dairy">Dairy</option>
           <option value="Bakery">Bakery</option>
+          <option value="Food">Food</option>
         </select>
       </div>
 

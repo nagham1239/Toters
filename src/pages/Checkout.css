@@ -1,0 +1,91 @@
+/* General Container Styling */
+.checkout-loading,
+.checkout-error,
+.checkout-success {
+  text-align: center;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+}
+
+/* Loading State */
+.checkout-loading h1 {
+  font-size: 2rem;
+  color: #3498db;
+}
+
+.checkout-loading p {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+/* Error State */
+.checkout-error {
+  color: #e74c3c;
+}
+
+.checkout-error h1 {
+  font-size: 2rem;
+}
+
+.checkout-error p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.back-to-cart-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-to-cart-button:hover {
+  background-color: #2980b9;
+}
+
+/* Success State */
+.checkout-success {
+  color: #2ecc71;
+}
+
+.checkout-success h1 {
+  font-size: 2rem;
+}
+
+.checkout-success p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.checkout-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.continue-shopping-button,
+.track-order-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.continue-shopping-button:hover,
+.track-order-button:hover {
+  background-color: #2980b9;
+}
+
+.track-order-button {
+  background-color: #2ecc71; /* Different color for tracking button */
+}
+
+.track-order-button:hover {
+  background-color: #27ae60;
+}

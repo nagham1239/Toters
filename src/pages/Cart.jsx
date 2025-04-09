@@ -3,11 +3,13 @@ import { FaTrashAlt, FaMinus, FaPlus } from "react-icons/fa";
 import Cookies from "js-cookie"; // For managing cookies
 import { db } from "../components/firebase";
 import { collection, query, where, getDocs, deleteDoc, doc, updateDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const navigate = useNavigate(); // Initialize useNavigate
 
   // Fetch cart items for the logged-in user
   useEffect(() => {
@@ -28,6 +30,7 @@ const Cart = () => {
           id: doc.id,
           ...doc.data(),
         }));
+        console.log("cart data", items);
 
         setCartItems(items);
         setLoading(false);
@@ -105,7 +108,7 @@ const Cart = () => {
               <img src={item.image} alt={item.name} className="cart-item-image" />
               <div className="cart-item-details">
                 <h3>{item.name}</h3>
-                <p>${item.price.toFixed(2)}</p>
+                <p>${item.price}</p>
                 <div className="quantity-controls">
                   <button
                     className="quantity-button"
@@ -138,8 +141,14 @@ const Cart = () => {
 
       {/* Total Price */}
       <div className="cart-total">
-        <h3>Total: ${totalPrice.toFixed(2)}</h3>
-        <button className="checkout-button" >Proceed to Checkout</button>
+        <h3>Total: ${totalPrice}</h3>
+        <button
+          className="checkout-button"
+          onClick={() => navigate("/Checkout")} // Use navigate to go to checkout
+          disabled={cartItems.length === 0} // Disable if cart is empty
+        >
+          Proceed to Checkout
+        </button>
       </div>
     </div>
   );

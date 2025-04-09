@@ -10,6 +10,7 @@ import OrderTracking from "./pages/OrderTracking";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import AdminRoutes from "./pages/admin/AdminRoutes";
+import About from "./pages/About";
 const App = () => {
   return (
     <div>
@@ -17,6 +18,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/About" element={<About />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/order-tracking" element={<OrderTracking />} />

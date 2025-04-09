@@ -19,7 +19,7 @@ const Navbar = () => {
       <div className={`nav-links ${menuOpen ? "open" : ""}`}>
         <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
         <Link to="/products" onClick={() => setMenuOpen(false)}>Products</Link>
-
+        <Link to="/About" onClick={() => setMenuOpen(false)}>About us</Link>
         {/* Show Cart link only if the user is logged in */}
         {isLoggedIn && (
           <Link to="/cart" onClick={() => setMenuOpen(false)}>
@@ -33,7 +33,11 @@ const Navbar = () => {
             Track Order
           </Link>
         )}
-
+        {isLoggedIn && (
+          <button  onClick={() => {setMenuOpen(false),Cookies.remove("userSession")}}>
+            logout
+          </button>
+        )}
         {/* Show Login/Sign Up links only if the user is NOT logged in */}
         {!isLoggedIn && (
           <>

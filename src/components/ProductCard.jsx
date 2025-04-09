@@ -26,6 +26,7 @@ const ProductCard = ({ product }) => {
         name: product.name,
         price: product.price,
         image: product.image,
+        quantity: 1,
         timestamp: new Date(), // Optional: Add a timestamp for when the item was added
       });
 

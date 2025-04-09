@@ -30,12 +30,15 @@ const Login = () => {
 
       // Save user session in a cookie
       Cookies.set("userSession", user.uid, { expires: 7 }); // Expires in 7 days
-
+      Cookies.set("typeSession", user.type, { expires: 7 }); // Expires in 7 days
       // Clear any previous errors
       setError("");
 
       // Redirect to the home page
       alert("Login successful! Redirecting...");
+      if(user.type=="admin"){
+        navigate("/admin")
+      }
       navigate("/");
     } catch (error) {
       // Handle Firebase-specific errors
