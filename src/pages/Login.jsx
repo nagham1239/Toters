@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "./Auth.css";
-import { auth } from "../components/firebase";
+
+import { auth, db } from "../components/firebase"; // Make sure db is exported from firebase.js
 import { signInWithEmailAndPassword } from "firebase/auth";
-import Cookies from "js-cookie"; // For managing cookies
+import { doc, getDoc } from "firebase/firestore";
+import Cookies from "js-cookie";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -13,35 +15,45 @@ const Login = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Basic validation
     if (!email || !password) {
       setError("Please fill in all fields.");
       return;
     }
 
     try {
-      // Sign in with Firebase Authentication
+      // Sign in with Firebase Auth
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      // Save user session in a cookie
-      Cookies.set("userSession", user.uid, { expires: 7 }); // Expires in 7 days
-      Cookies.set("typeSession", user.type, { expires: 7 }); // Expires in 7 days
-      // Clear any previous errors
-      setError("");
+      // Fetch user role from Firestore
+      const userRef = doc(db, "users", user.uid);
+      const userSnap = await getDoc(userRef);
 
-      // Redirect to the home page
-      alert("Login successful! Redirecting...");
-      if(user.type=="admin"){
-        navigate("/admin")
+      if (!userSnap.exists()) {
+        setError("User data not found in Firestore.");
+        return;
       }
-      navigate("/");
+
+      const userData = userSnap.data();
+      const userType = userData.type || "user"; // default to "user" if not set
+
+      // Save session cookies
+      Cookies.set("userSession", user.uid, { expires: 7 });
+      Cookies.set("typeSession", userType, { expires: 7 });
+
+      setError("");
+      alert("Login successful! Redirecting...");
+
+      if (userType === "admin") {
+        navigate("/admin");
+      } else {
+        navigate("/");
+      }
+
     } catch (error) {
-      // Handle Firebase-specific errors
       setError(error.message || "An error occurred during login.");
     }
   };

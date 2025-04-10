@@ -52,7 +52,7 @@ const About = () => {
           </p>
           <button 
             className="about-page-button" 
-            onClick={() => window.location.href = '/contact'}
+            onClick={() => window.location.href = 'mailto:totersmechref@gmail.com?subject=Inquiry about Toters'}
           >
             Get in Touch
           </button>

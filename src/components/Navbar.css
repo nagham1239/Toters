@@ -1,95 +1,102 @@
-/* General Navbar Styles */
+/* Navbar.css */
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: white;
-  padding: 15px 20px;
-  color: black;
-
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
   top: 0;
-  left: 0;
-  z-index: 1000;
-  border-bottom: 2px solid rgb(239, 239, 239);
+  z-index: 999;
 }
 
-/* Logo Styling */
-.logo h2 {
-  font-size: 24px;
-  font-weight: bold;
-  color: black;
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
-/* Navigation Links */
+.logo-img {
+  height: 40px;
+  object-fit: contain;
+}
+
 .nav-links {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 1rem;
 }
 
-.nav-links a {
+.nav-links a,
+.nav-links button {
   text-decoration: none;
-  color: black;
-  font-size: 16px;
-  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
-  display: flex;
-  align-items: center;
-  gap: 5px;  padding: 5px 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  border: none;
+  background: none;
+  color: #333;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-.nav-links a:hover {
-  color: white !important;
-  background: black;
-
-  border-radius: 5px;
+.nav-links a:hover,
+.nav-links button:hover {
+  background-color: #f0f0f0;
+  color: #000;
 }
 
-/* Ensure all links are visible */
-.nav-links a:visited {
-  color: rgb(0, 0, 0);
+.nav-links .active {
+  background-color: #4caf50;
+  color: white;
+  font-weight: 600;
 }
 
-/* Menu Icon for Mobile */
+.logout-button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
+
+.logout-button:hover {
+  background-color: #c0392b;
+}
+
 .menu-icon {
   display: none;
-  font-size: 24px;
+  font-size: 1.5rem;
   cursor: pointer;
-  color: black;
 }
 
-/* Responsive Navbar */
 @media (max-width: 768px) {
   .nav-links {
     position: absolute;
-    top: 60px;
-    right: 0;
-    background: white;
+    top: 70px;
+    left: 0;
+    width: 100%;
     flex-direction: column;
-    width: 200px;
-    text-align: right;
-    padding: 10px;
+    background: #fff;
+    align-items: flex-start;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     display: none;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   }
 
   .nav-links.open {
     display: flex;
   }
 
+  .nav-links a,
+  .nav-links button {
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem 1rem;
+  }
+
   .menu-icon {
     display: block;
-  }
-
-  .nav-links a {
-    padding: 10px;
-    display: block;
-    text-align: center;
-    border-bottom: 1px solid black;
-  }
-
-  .nav-links a:last-child {
-    border-bottom: none;
   }
 }
