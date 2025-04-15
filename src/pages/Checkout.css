@@ -48,7 +48,7 @@
 
 /* Success State */
 .checkout-success {
-  color: #2ecc71;
+  color: #34daca;
 }
 
 .checkout-success h1 {
@@ -68,7 +68,7 @@
 
 .continue-shopping-button,
 .track-order-button {
-  background-color: #3498db;
+  background-color: #00b19e;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -79,13 +79,13 @@
 
 .continue-shopping-button:hover,
 .track-order-button:hover {
-  background-color: #2980b9;
+  background-color: #00b19e;
 }
 
 .track-order-button {
-  background-color: #2ecc71; /* Different color for tracking button */
+  background-color: #00b19e; /* Different color for tracking button */
 }
 
 .track-order-button:hover {
-  background-color: #27ae60;
+  background-color: #00b19e;
 }

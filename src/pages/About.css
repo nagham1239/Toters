@@ -49,7 +49,7 @@
   .about-page-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #3498db;
+    background-color: #fa4121;
     color: white;
     border: none;
     border-radius: 5px;
@@ -59,7 +59,7 @@
   }
   
   .about-page-button:hover {
-    background-color: #2980b9;
+    background-color: #a51e09;
   }
   
   /* Image Styling */

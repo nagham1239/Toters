@@ -10,7 +10,7 @@
   
   .auth-container h2 {
     margin-bottom: 20px;
-    color: #333;
+    color: #00b19e !important;
   }
   
   .auth-container input {
@@ -24,7 +24,7 @@
   .auth-container button {
     width: 100%;
     padding: 10px;
-    background: #28a745;
+    background: #00b19e;
     color: white;
     border: none;
     border-radius: 5px;
@@ -34,7 +34,7 @@
   }
   
   .auth-container button:hover {
-    background: #218838;
+    background: #00b19e;
   }
   
   .auth-container p {
@@ -43,7 +43,7 @@
   }
   
   .auth-container a {
-    color: #007bff;
+    color: #00b19e;
     text-decoration: none;
   }
   

@@ -50,7 +50,7 @@ const Signup = () => {
 
   return (
     <div className="auth-container">
-      <h2>Sign Up</h2>
+      <h2 className="sin">Sign Up</h2>
       <form onSubmit={handleSubmit}>
         {/* Full Name Input */}
         <input

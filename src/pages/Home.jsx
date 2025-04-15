@@ -8,7 +8,7 @@ const Home = () => {
       <section className="home-hero">
         <div className="home-hero-content">
           <h1>Welcome to Toters</h1>
-          <p>Your trusted partner for premium groceries delivered fresh to your doorstep. Lorem ipsum dolor sit amet consectetur adipisicing elit. A aspernatur ab, non exercitationem sequi animi porro! Tempora distinctio recusandae molestias aspernatur, aperiam impedit? Magni temporibus velit eos a ex expedita.</p>
+          <p id='homep'>Toters is your go-to delivery app for food, groceries, and more all from your favorite local stores and restaurants. Whether you're craving a late-night snack or need everyday essentials delivered to your door, Toters makes it fast, easy, and reliable. With just a few taps, enjoy hassle-free service and real-time tracking right to your home.</p>
           <button onClick={() => window.location.href = "/products"} className="home-hero-button">
             <FaShoppingCart /> Shop Now
           </button>
@@ -88,18 +88,18 @@ const Home = () => {
         <div className="home-faqs-content">
           <h2>Frequently Asked Questions</h2>
           <details>
-            <summary>How do I place an order?</summary>
-            <p>
+            <summary >How do I place an order?</summary>
+            <p >
               Browse our catalog, add items to your cart, and proceed to checkout securely.
             </p>
           </details>
-          <details>
+          <details >
             <summary>What are your delivery charges?</summary>
             <p>
               Delivery is free for orders above $50. For orders below $50, a flat fee of $5 applies.
             </p>
           </details>
-          <details>
+          <details >
             <summary>Can I cancel my order?</summary>
             <p>
               Yes, you can cancel your order anytime before it is dispatched.

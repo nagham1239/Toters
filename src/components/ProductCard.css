@@ -14,6 +14,9 @@
   height: 100%; /* Make sure the height of the card is consistent */
   width: 300px;
 }
+.products-title h1{
+  color: #00b19e;
+}
 
 .product-card:hover {
   transform: translateY(-5px);
@@ -40,18 +43,18 @@
 .product-name {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  color: #2e7d32;
+  color: #00b19e;
 }
 
 .product-price {
   font-size: 1rem;
-  color: #4caf50;
+  color: #06a091;
   font-weight: bold;
 }
 
 /* Add to Cart Button Styling */
 .add-to-cart-button {
-  background-color: #4caf50;
+  background-color:rgb(249, 58, 24);
   color: white;
   border: none;
   padding: 0.7rem 1.2rem;
@@ -67,10 +70,10 @@
 }
 
 .add-to-cart-button:hover {
-  background-color: #388e3c;
+  background-color: rgb(189, 48, 24);
 }
 
 .add-to-cart-button.added {
-  background-color: #ff9800;
+  background-color: #ff4d00;
   pointer-events: none; /* Disable button after adding */
 }

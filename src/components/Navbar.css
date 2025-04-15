@@ -49,7 +49,7 @@
 }
 
 .nav-links .active {
-  background-color: #4caf50;
+  background-color: rgb(249, 58, 24);
   color: white;
   font-weight: 600;
 }

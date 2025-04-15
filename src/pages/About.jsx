@@ -59,13 +59,7 @@ const About = () => {
         </div>
 
         {/* Image Section */}
-        <div className="about-page-image-container">
-          <img
-            src="/toters.png"
-            alt="Toters Team"
-            className="about-page-image"
-          />
-        </div>
+        
       </div>
     </section>
   );
